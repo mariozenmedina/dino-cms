@@ -1,43 +1,65 @@
 <template>
     <div class="dino-field">
         <label class="form-label">{{ options?.label ?? '' }}</label>
+        <div v-for="(row, rowIdx) in inputValue">
+            <h2>Olá</h2>
+            <Field
+                v-for="(field, idx) in fields"
+                :key="idx"
+                :component="field.component"
+                :attributes="field.attributes"
+                :options="field.options"
+                :fields="field.fields"
+                v-model="inputValue[rowIdx][field.id]">
+            </Field>
+        </div>
+        <button @click="addRow">Add row</button>
     </div>
 </template>
 
 <script setup lang="ts">
-    import { computed } from 'vue';
+    import Field from '@/components/dino/Field.vue';
 
-    interface Options {
-        label?: string;
-        min?: number;
-        max?: number;
+    import { ref, onMounted } from 'vue';
+
+    interface IAttributes {
+        placeholder?: string;
+        required?: boolean | string;
+        pattern?: string;
         [key: string]: any; // Permite outros atributos dinâmicos
     }
 
-    const props = defineProps<{
-        fields?: Array;
-        options?: Options;
-    }>();
+    interface IOptions {
+        prefix?: string;
+        suffix?: string;
+        label?: string;
+        validation?: string;
+    }
 
-    const inputValue = defineModel<string | number>();
+    interface IField {
+        component: string;
+        attributes?: IAttributes;
+        options?: IOptions;
+        fields?: IField[];
+    }
+    
+    const props = defineProps<IField>();
 
-    const isValid = computed<boolean | null>(() => {
-        const regex = props.options?.validation ? new RegExp(props.options.validation, "u") : null;
-        
-        if (regex && inputValue.value) {
-            return regex.test(inputValue.value);
-        } 
-        
-        if (props.attributes?.required === true || props.attributes?.required === "true") {
-            return inputValue.value !== "";
-        }
+    const inputValue = defineModel<any>();
 
-        return null;
+    function addRow() {
+        let newRow = {}
+        props.fields?.forEach(field => {
+            newRow[field.id] = undefined;
+        });
+        inputValue.value.push(newRow);
+    }
+
+    onMounted(() => {
+        console.log(inputValue, props.fields);
     });
+
 </script>
 
 <style scoped lang="less">
-input{
-    height: auto;
-}
 </style>

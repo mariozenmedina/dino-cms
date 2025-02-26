@@ -8,6 +8,7 @@
                 :component="field.component"
                 :attributes="field.attributes"
                 :options="field.options"
+                :fields="field.fields"
                 v-model="values[field.id]">
             </Field>
         </div>
@@ -62,7 +63,7 @@ export default {
                     },
                     id: "id_unico_data"
                 },
-                /* {
+                {
                     component: "FieldRepeater",
                     options: {
                         label: "Repeater",
@@ -91,15 +92,16 @@ export default {
                             },
                             id: "id_unico_texto"
                         },
-                    ]
-                } */
+                    ],
+                    id: "id_unico_repater"
+                }
             ],
             values: {}
         }
     },
     mounted() {
         this.fields.forEach(i => {
-            this.values[i.id] = ""
+            this.values[i.id] = [];
         });
     },
 };

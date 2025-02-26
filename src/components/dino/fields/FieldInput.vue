@@ -21,14 +21,14 @@
 <script setup lang="ts">
     import { computed } from 'vue';
 
-    interface Attributes {
+    interface IAttributes {
         placeholder?: string;
         required?: boolean | string;
         pattern?: string;
         [key: string]: any; // Permite outros atributos dinâmicos
     }
 
-    interface Options {
+    interface IOptions {
         prefix?: string;
         suffix?: string;
         label?: string;
@@ -36,11 +36,11 @@
     }
 
     const props = defineProps<{
-        attributes?: Attributes;
-        options?: Options;
+        attributes?: IAttributes;
+        options?: IOptions;
     }>();
 
-    const inputValue = defineModel<string | number>();
+    const inputValue = defineModel<any>();
 
     const isValid = computed<boolean | null>(() => {
         const regex = props.options?.validation ? new RegExp(props.options.validation, "u") : null;
