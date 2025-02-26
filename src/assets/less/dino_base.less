@@ -1,0 +1,40 @@
+/********************************* FONTS *********************************/
+
+/********************************* CORES *********************************/
+@preto: #000;
+@escuro: #222;
+@grafite: #333;
+@cinzaescuro: #777;
+@cinza: #AAA;
+@cinzaclaro: #EEE;
+@gelo: #F2F2F2;
+@branco: #FFF;
+
+@cores:
+	preto @preto,
+	escuro @escuro,
+	grafite @grafite,
+	cinzaescuro @cinzaescuro,
+	cinza @cinza,
+	cinzaclaro @cinzaclaro,
+	gelo @gelo,
+	branco @branco;
+
+.color-classes(@i: length(@cores)) when (@i > 0) {
+    .color-classes(@i - 1);
+    @color: extract(@cores, @i);
+	@nome: extract(@color, 1);
+	@cor: extract(@color, 2);
+    .c@{nome} { color: @cor; }
+	.b@{nome} { background-color: @cor; }
+	.f@{nome} { fill: @cor; }
+}
+.color-classes();
+
+/********************************* GERAL *********************************/
+
+/*********************************** FORMAS ***********************************/
+
+/*********************************** FONTES TEXTOS ***********************************/
+
+/*********************************** CLASSES PRONTAS ***********************************/
