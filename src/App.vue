@@ -72,41 +72,52 @@ export default {
                     },
                     fields: [
                         {
-                            component: "FieldInput",
-                            attributes: {
-                                type: "text",
-                                name: "nome",
-                                placeholder: "insira seu nome",
-                                required: "true",
-                                pattern: "",
-                                minlength: 0,
-                                maxlength: 60,
-                                size: null,
-                                readonly: null,
-                            },
+                            component: "FieldRepeater",
                             options: {
-                                label: "Text",
-                                prefix: "Prefix",
-                                suffix: "Suffix",
-                                validation: "^[\\p{Letter}\\p{Mark}]+(?:\\s[\\p{Letter}\\p{Mark}]+)*$"
+                                label: "Repeater",
+                                min: 0,
+                                max: 5,
                             },
-                            id: "id_unico_texto"
-                        },
-                        {
-                            component: "FieldInput",
-                            attributes: {
-                                type: "date",
-                                name: "data",
-                                required: "true",
-                                readonly: null,
-                            },
-                            options: {
-                                label: "Date",
-                                prefix: "Prefix",
-                                suffix: "Suffix",
-                            },
-                            id: "id_unico_data"
-                        },
+                            fields: [
+                                {
+                                    component: "FieldInput",
+                                    attributes: {
+                                        type: "text",
+                                        name: "nome",
+                                        placeholder: "insira seu nome",
+                                        required: "true",
+                                        pattern: "",
+                                        minlength: 0,
+                                        maxlength: 60,
+                                        size: null,
+                                        readonly: null,
+                                    },
+                                    options: {
+                                        label: "Text",
+                                        prefix: "Prefix",
+                                        suffix: "Suffix",
+                                        validation: "^[\\p{Letter}\\p{Mark}]+(?:\\s[\\p{Letter}\\p{Mark}]+)*$"
+                                    },
+                                    id: "id_unico_texto"
+                                },
+                                {
+                                    component: "FieldInput",
+                                    attributes: {
+                                        type: "date",
+                                        name: "data",
+                                        required: "true",
+                                        readonly: null,
+                                    },
+                                    options: {
+                                        label: "Date",
+                                        prefix: "Prefix",
+                                        suffix: "Suffix",
+                                    },
+                                    id: "id_unico_data"
+                                },
+                            ],
+                            id: "id_unico_repater"
+                        }
                     ],
                     id: "id_unico_repater"
                 }

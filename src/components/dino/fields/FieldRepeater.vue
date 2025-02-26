@@ -49,7 +49,7 @@
     function addRow() {
         let newRow = {}
         props.fields?.forEach(field => {
-            newRow[field.id] = undefined;
+            newRow[field.id] = [];
         });
         inputValue.value.push(newRow);
     }
