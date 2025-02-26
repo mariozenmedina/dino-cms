@@ -1,7 +1,8 @@
 <template>
-    <div class="input-group">
-        <div v-if="options && options.prefix" class="input-group-text">{{ options.prefix }}</div>
-        <div class="form-floating">
+    <div class="dino-field">
+        <label class="form-label">{{ options?.label ?? '' }}</label>
+        <div class="input-group">
+            <div v-if="options && options.prefix" class="input-group-text">{{ options.prefix }}</div>
             <input
                 :class="[
                     'form-control',
@@ -11,9 +12,9 @@
                 type="text"
                 v-model="inputValue"
                 v-bind="attributes" />
-            <label>{{ options?.label ?? '' }}</label>
+
+            <div v-if="options && options.suffix" class="input-group-text">{{ options.suffix }}</div>
         </div>
-        <div v-if="options && options.suffix" class="input-group-text">{{ options.suffix }}</div>
     </div>
 </template>
 
@@ -39,7 +40,7 @@
         options?: Options;
     }>();
 
-    const inputValue = defineModel<string>();
+    const inputValue = defineModel<string | number>();
 
     const isValid = computed<boolean | null>(() => {
         const regex = props.options?.validation ? new RegExp(props.options.validation, "u") : null;
@@ -49,7 +50,7 @@
         } 
         
         if (props.attributes?.required === true || props.attributes?.required === "true") {
-            return inputValue.value.trim() !== "";
+            return inputValue.value !== "";
         }
 
         return null;
@@ -57,4 +58,7 @@
 </script>
 
 <style scoped lang="less">
+input{
+    height: auto;
+}
 </style>

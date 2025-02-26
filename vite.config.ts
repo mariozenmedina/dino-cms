@@ -7,7 +7,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
-        additionalData: `@import "./assets/less/dino_base.less";`,
+        additionalData: `@import "../../assets/less/dino_base.less";`,
       },
     },
   },

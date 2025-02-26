@@ -41,9 +41,9 @@ export default {
                         readonly: null,
                     },
                     options: {
-                        label: "Nome Completo",
-                        prefix: "",
-                        suffix: "",
+                        label: "Text",
+                        prefix: "Prefix",
+                        suffix: "Suffix",
                         validation: "^[\\p{Letter}\\p{Mark}]+(?:\\s[\\p{Letter}\\p{Mark}]+)*$"
                     },
                     value: ""
@@ -56,6 +56,11 @@ export default {
                         required: "true",
                         readonly: null,
                     },
+                    options: {
+                        label: "Date",
+                        prefix: "Prefix",
+                        suffix: "Suffix",
+                    },
                     value: ""
                 },
                 {
@@ -66,6 +71,11 @@ export default {
                         required: "true",
                         readonly: null,
                     },
+                    options: {
+                        label: "Color",
+                        prefix: "Prefix",
+                        suffix: "Suffix",
+                    },
                     value: ""
                 },
                 {
@@ -75,6 +85,11 @@ export default {
                         name: "time",
                         required: "true",
                         readonly: null,
+                    },
+                    options: {
+                        label: "Time",
+                        prefix: "Prefix",
+                        suffix: "Suffix",
                     },
                     value: ""
                 },
@@ -89,6 +104,83 @@ export default {
                         step: 1,
                         readonly: null,
                     },
+                    options: {
+                        label: "Number",
+                        prefix: "Prefix",
+                        suffix: "Suffix",
+                    },
+                    value: ""
+                },
+                {
+                    component: "FieldInput",
+                    attributes: {
+                        type: "datetime-local",
+                        name: "datetime",
+                        required: "true",
+                        min: 0,
+                        max: 600,
+                        step: 1,
+                        readonly: null,
+                    },
+                    options: {
+                        label: "Date-Time",
+                        prefix: "Prefix",
+                        suffix: "Suffix",
+                    },
+                    value: ""
+                },
+                {
+                    component: "FieldInput",
+                    attributes: {
+                        type: "password",
+                        name: "password",
+                        required: "true",
+                        min: 0,
+                        max: 600,
+                        step: 1,
+                        readonly: null,
+                    },
+                    options: {
+                        label: "Password",
+                        prefix: "Prefix",
+                        suffix: "Suffix",
+                    },
+                    value: ""
+                },
+                {
+                    component: "FieldInput",
+                    attributes: {
+                        type: "url",
+                        name: "url",
+                        required: "true",
+                        min: 0,
+                        max: 600,
+                        step: 1,
+                        readonly: null,
+                    },
+                    options: {
+                        label: "URL",
+                        prefix: "Prefix",
+                        suffix: "Suffix",
+                    },
+                    value: ""
+                },
+                {
+                    component: "FieldInput",
+                    attributes: {
+                        type: "email",
+                        name: "email",
+                        required: "true",
+                        min: 0,
+                        max: 600,
+                        step: 1,
+                        readonly: null,
+                    },
+                    options: {
+                        label: "E-mail",
+                        prefix: "Prefix",
+                        suffix: "Suffix",
+                    },
                     value: ""
                 },
             ]
@@ -97,5 +189,5 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 </style>
