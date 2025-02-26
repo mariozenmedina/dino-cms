@@ -57,7 +57,7 @@ export default {
                         readonly: null,
                     },
                     options: {
-                        label: "Date",
+                        label: "Color",
                         prefix: "Prefix",
                         suffix: "Suffix",
                     },
@@ -91,6 +91,21 @@ export default {
                                 validation: "^[\\p{Letter}\\p{Mark}]+(?:\\s[\\p{Letter}\\p{Mark}]+)*$"
                             },
                             id: "id_unico_texto"
+                        },
+                        {
+                            component: "FieldInput",
+                            attributes: {
+                                type: "date",
+                                name: "data",
+                                required: "true",
+                                readonly: null,
+                            },
+                            options: {
+                                label: "Date",
+                                prefix: "Prefix",
+                                suffix: "Suffix",
+                            },
+                            id: "id_unico_data"
                         },
                     ],
                     id: "id_unico_repater"

@@ -1,8 +1,7 @@
 <template>
     <div class="dino-field">
         <label class="form-label">{{ options?.label ?? '' }}</label>
-        <div v-for="(row, rowIdx) in inputValue">
-            <h2>Olá</h2>
+        <div v-for="(row, rowIdx) in inputValue" class="d-flex">
             <Field
                 v-for="(field, idx) in fields"
                 :key="idx"
