@@ -7,7 +7,7 @@
                 :key="idx"
                 :component="field.component"
                 :attributes="field.attributes"
-                :options="field.options"
+                :configs="field.configs"
                 :fields="field.fields"
                 v-model="values[field.id]">
             </Field>
@@ -30,7 +30,7 @@ export default {
                 {
                     component: "FieldInput",
                     attributes: {
-                        type: "textarea",
+                        type: "text",
                         name: "nome",
                         placeholder: "insira seu nome",
                         required: "true",
@@ -41,13 +41,50 @@ export default {
                         readonly: null,
                         rows: 10,
                     },
-                    options: {
+                    configs: {
                         label: "Text",
                         prefix: "Prefix",
                         suffix: "Suffix",
-                        validation: "^[\\p{Letter}\\p{Mark}]+(?:\\s[\\p{Letter}\\p{Mark}]+)*$"
+                        validation: "^[\\p{Letter}\\p{Mark}]+(?:\\s[\\p{Letter}\\p{Mark}]+)*$",
+                        datalist: ['Chocolate', 'Coconut', 'Mint', 'Strawberry', 'Vanilla'],
                     },
                     id: "id_unico_texto"
+                },
+                {
+                    component: "FieldSelect",
+                    attributes: {
+                        name: "select",
+                        required: "true",
+                    },
+                    configs: {
+                        label: "Select",
+                        prefix: "Prefix",
+                        suffix: "Suffix",
+                        optgroups: [
+                            {
+                                label: "Option group",
+                                options: [
+                                    { label: "Option 1", value: "option1"},
+                                    { label: "Option 2", value: "option2"},
+                                    { label: "Option 3", value: "option3"},
+                                ],
+                            },
+                            {
+                                label: "Option group 2",
+                                options: [
+                                    { label: "Option 1", value: "option1"},
+                                    { label: "Option 2", value: "option2"},
+                                    { label: "Option 3", value: "option3"},
+                                ],
+                            },
+                        ],
+                        options: [
+                            { label: "Option 1", value: "option1"},
+                            { label: "Option 2", value: "option2"},
+                            { label: "Option 3", value: "option3"},
+                        ],
+                    },
+                    id: "id_unico_select"
                 },
                 {
                     component: "FieldInput",
@@ -57,7 +94,7 @@ export default {
                         required: "true",
                         readonly: null,
                     },
-                    options: {
+                    configs: {
                         label: "Color",
                         prefix: "Prefix",
                         suffix: "Suffix",
@@ -72,7 +109,7 @@ export default {
                         required: "true",
                         readonly: null,
                     },
-                    options: {
+                    configs: {
                         label: "Password",
                         prefix: "R$",
                         suffix: ",00",
@@ -81,7 +118,7 @@ export default {
                 },
                 {
                     component: "FieldRepeater",
-                    options: {
+                    configs: {
                         label: "Repeater",
                         min: 0,
                         max: 5,
@@ -89,7 +126,7 @@ export default {
                     fields: [
                         {
                             component: "FieldRepeater",
-                            options: {
+                            configs: {
                                 label: "Repeater",
                                 min: 0,
                                 max: 5,
@@ -108,7 +145,7 @@ export default {
                                         size: null,
                                         readonly: null,
                                     },
-                                    options: {
+                                    configs: {
                                         label: "Text",
                                         prefix: "Prefix",
                                         suffix: "Suffix",
@@ -124,7 +161,7 @@ export default {
                                         required: "true",
                                         readonly: null,
                                     },
-                                    options: {
+                                    configs: {
                                         label: "Date",
                                         prefix: "Prefix",
                                         suffix: "Suffix",

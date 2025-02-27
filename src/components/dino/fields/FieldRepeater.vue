@@ -1,13 +1,13 @@
 <template>
     <div class="dino-field">
-        <label class="form-label">{{ options?.label ?? '' }}</label>
+        <label class="form-label">{{ configs?.label ?? '' }}</label>
         <div v-for="(row, rowIdx) in inputValue" class="d-flex">
             <Field
                 v-for="(field, idx) in fields"
                 :key="idx"
                 :component="field.component"
                 :attributes="field.attributes"
-                :options="field.options"
+                :configs="field.configs"
                 :fields="field.fields"
                 v-model="inputValue[rowIdx][field.id]">
             </Field>
@@ -25,10 +25,10 @@
         placeholder?: string;
         required?: boolean | string;
         pattern?: string;
-        [key: string]: any; // Permite outros atributos dinâmicos
+        [key: string]: any;
     }
 
-    interface IOptions {
+    interface IConfigs {
         prefix?: string;
         suffix?: string;
         label?: string;
@@ -38,7 +38,7 @@
     interface IField {
         component: string;
         attributes?: IAttributes;
-        options?: IOptions;
+        configs?: IConfigs;
         fields?: IField[];
     }
     

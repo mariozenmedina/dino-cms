@@ -3,39 +3,26 @@
         <label class="form-label">{{ configs?.label ?? '' }}</label>
         <div class="input-group">
             <div v-if="configs && configs.prefix" class="input-group-text">{{ configs.prefix }}</div>
-            <textarea v-if="attributes?.type=='textarea'"
+            <select
                 :class="[
-                    'form-control',
+                    'form-select',
                     isValid === true ? 'is-valid' : '',
                     isValid === false ? 'is-invalid' : ''
                 ]"
                 v-model="inputValue"
                 v-bind="attributes">
-            </textarea>
-            <input v-else
-                :class="[
-                    'form-control',
-                    isValid === true ? 'is-valid' : '',
-                    isValid === false ? 'is-invalid' : ''
-                ]"
-                :list="uuid"
-                v-model="inputValue"
-                v-bind="attributes" />
-            
-            <datalist :id="uuid" v-if="configs?.datalist">
-                <option v-for="item in configs?.datalist" :key="item" :value="item"></option>
-            </datalist>
-
+                <optgroup v-if="configs.optgroups" v-for="optg in configs.optgroups" :key="optg.label" :label="optg.label">
+                    <option v-for="pair in optg?.options" :key="pair.value" :value="pair.value">{{ pair.label }}</option>
+                </optgroup>
+                <option v-else v-for="pair in configs?.options" :key="pair.value" :value="pair.value">{{ pair.label }}</option>
+            </select>
             <div v-if="configs && configs.suffix" class="input-group-text">{{ configs.suffix }}</div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-    import { computed, ref, getCurrentInstance } from 'vue';
-
-    const instance = getCurrentInstance();
-    const uuid = ref('comp-'+instance.uid);
+    import { computed } from 'vue';
 
     interface IAttributes {
         placeholder?: string;
@@ -44,11 +31,23 @@
         [key: string]: any;
     }
 
+    interface IOption {
+        pair: string;
+        value: string;
+    }
+
+    interface IOptgroup<T = IOption[]> {
+        label: string;
+        options: T;
+    }
+
     interface IConfigs {
         prefix?: string;
         suffix?: string;
         label?: string;
         validation?: string;
+        optgroups?: IOptgroup[];
+        options?: IOption[];
     }
 
     const props = defineProps<{
