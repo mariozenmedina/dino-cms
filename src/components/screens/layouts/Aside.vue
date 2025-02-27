@@ -3,6 +3,8 @@
         <div class="container-fluid">
             <nav>
                 <ul>
+                    <li><RouterLink to="/">Construction</RouterLink></li>
+                    <li><RouterLink to="/collections">Collections</RouterLink></li>
                     <li><a href="#">Posts</a></li>
                     <li><a href="#">Articles</a></li>
                     <li><a href="#">Collections</a></li>

@@ -1,3 +1,8 @@
+import '@fontsource/raleway';
+import '@fontsource/raleway/100.css';
+import '@fontsource/raleway/300.css';
+import '@fontsource/raleway/700.css';
+import '@fontsource/raleway/900.css';
 import { createApp } from 'vue';
 import { createWebHistory, createRouter, type RouteRecordRaw } from 'vue-router';
 
