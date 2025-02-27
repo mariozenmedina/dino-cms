@@ -1,30 +1,20 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import { createWebHistory, createRouter } from 'vue-router'
+import { createApp } from 'vue';
+import { createWebHistory, createRouter, type RouteRecordRaw } from 'vue-router';
 
-/* VUE ROUTER */
-/* const router = createRouter({
-    history: createWebHashHistory(),
-    routes: [
-        {
-            path: "/",
-            name: "construction",
-            components: {
-                Screen: Construction,
-            },
-        },
-        {
-            path: "/:pathMatch(.*)*",
-            redirect: () => {
-                return { path: '/', query: null }
-            },
-        }
-    ],
-}); */
+import App from '@/App.vue';
+import Construction from '@/components/screens/Construction.vue';
+import Collections from '@/components/screens/Collections.vue';
+
 const routes = [
     {
         path: '/',
         name: "construction",
+        component: Construction
+    },
+    {
+        path: '/collections',
+        name: "collections",
+        component: Collections
     },
     {
         path: "/:pathMatch(.*)*",
@@ -36,7 +26,7 @@ const routes = [
   
 const router = createRouter({
     history: createWebHistory(),
-    routes,
+    routes: routes as RouteRecordRaw[],
 })
 
 createApp(App).use(router).mount('#app')
