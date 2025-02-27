@@ -1,5 +1,59 @@
 /********************************* FONTS *********************************/
 /********************************* CORES *********************************/
+.cdino {
+  color: #64C2A6;
+}
+.bdino {
+  background-color: #64C2A6;
+}
+.fdino {
+  fill: #64C2A6;
+}
+.cleaf {
+  color: #AADEA7;
+}
+.bleaf {
+  background-color: #AADEA7;
+}
+.fleaf {
+  fill: #AADEA7;
+}
+.colive {
+  color: #E6F69D;
+}
+.bolive {
+  background-color: #E6F69D;
+}
+.folive {
+  fill: #E6F69D;
+}
+.crust {
+  color: #E66D44;
+}
+.brust {
+  background-color: #E66D44;
+}
+.frust {
+  fill: #E66D44;
+}
+.cclay {
+  color: #FEAE65;
+}
+.bclay {
+  background-color: #FEAE65;
+}
+.fclay {
+  fill: #FEAE65;
+}
+.cbone {
+  color: #F4F1F0;
+}
+.bbone {
+  background-color: #F4F1F0;
+}
+.fbone {
+  fill: #F4F1F0;
+}
 .cpreto {
   color: #000;
 }
