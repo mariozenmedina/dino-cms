@@ -53,11 +53,6 @@
         });
         inputValue.value.push(newRow);
     }
-
-    onMounted(() => {
-        console.log(inputValue, props.fields);
-    });
-
 </script>
 
 <style scoped lang="less">

@@ -30,7 +30,7 @@ export default {
                 {
                     component: "FieldInput",
                     attributes: {
-                        type: "text",
+                        type: "textarea",
                         name: "nome",
                         placeholder: "insira seu nome",
                         required: "true",
@@ -39,6 +39,7 @@ export default {
                         maxlength: 60,
                         size: null,
                         readonly: null,
+                        rows: 10,
                     },
                     options: {
                         label: "Text",
@@ -62,6 +63,21 @@ export default {
                         suffix: "Suffix",
                     },
                     id: "id_unico_data"
+                },
+                {
+                    component: "FieldInput",
+                    attributes: {
+                        type: "password",
+                        name: "pass",
+                        required: "true",
+                        readonly: null,
+                    },
+                    options: {
+                        label: "Password",
+                        prefix: "R$",
+                        suffix: ",00",
+                    },
+                    id: "id_unico_pass"
                 },
                 {
                     component: "FieldRepeater",

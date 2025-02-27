@@ -3,13 +3,21 @@
         <label class="form-label">{{ options?.label ?? '' }}</label>
         <div class="input-group">
             <div v-if="options && options.prefix" class="input-group-text">{{ options.prefix }}</div>
-            <input
+            <textarea v-if="attributes?.type=='textarea'"
                 :class="[
                     'form-control',
                     isValid === true ? 'is-valid' : '',
                     isValid === false ? 'is-invalid' : ''
                 ]"
-                type="text"
+                v-model="inputValue"
+                v-bind="attributes">
+            </textarea>
+            <input v-else
+                :class="[
+                    'form-control',
+                    isValid === true ? 'is-valid' : '',
+                    isValid === false ? 'is-invalid' : ''
+                ]"
                 v-model="inputValue"
                 v-bind="attributes" />
 
