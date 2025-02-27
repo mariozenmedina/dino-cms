@@ -122,6 +122,7 @@ export default {
                         label: "Repeater",
                         min: 0,
                         max: 5,
+                        addRowLabel: "Add repeater",
                     },
                     fields: [
                         {
@@ -130,6 +131,7 @@ export default {
                                 label: "Repeater",
                                 min: 0,
                                 max: 5,
+                                addRowLabel: "Add group",
                             },
                             fields: [
                                 {

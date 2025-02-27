@@ -1,9 +1,10 @@
 <template>
-    <div class="dino-field">
-        <label class="form-label">{{ configs?.label ?? '' }}</label>
-        <div v-for="(row, rowIdx) in inputValue" class="d-flex">
+    <div class="dino-field w-100">
+        <label class="form-label w-100">{{ configs?.label ?? '' }}</label>
+        <div v-for="(row, rowIdx) in inputValue" class="d-flex gap-3">
             <Field
                 v-for="(field, idx) in fields"
+                class=""
                 :key="idx"
                 :component="field.component"
                 :attributes="field.attributes"
@@ -12,7 +13,7 @@
                 v-model="inputValue[rowIdx][field.id]">
             </Field>
         </div>
-        <button @click="addRow">Add row</button>
+        <button class="btn btn-primary" @click="addRow">{{ configs?.addRowLabel ?? 'Add row' }}</button>
     </div>
 </template>
 
@@ -33,6 +34,7 @@
         suffix?: string;
         label?: string;
         validation?: string;
+        [key: string]: any;
     }
 
     interface IField {

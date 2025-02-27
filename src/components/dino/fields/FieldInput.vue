@@ -1,6 +1,6 @@
 <template>
-    <div class="dino-field">
-        <label class="form-label">{{ configs?.label ?? '' }}</label>
+    <div class="dino-field w-100">
+        <label class="form-label w-100">{{ configs?.label ?? '' }}</label>
         <div class="input-group">
             <div v-if="configs && configs.prefix" class="input-group-text">{{ configs.prefix }}</div>
             <textarea v-if="attributes?.type=='textarea'"
