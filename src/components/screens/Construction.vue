@@ -3,7 +3,7 @@
     <DinoAside></DinoAside>
     <main>
         <div class="container-fluid">
-            <h2>Construction</h2>
+            <h2 class="b-left">Construction</h2>
             <Field
                 v-for="(field, idx) in fields"
                 :key="idx"
@@ -191,7 +191,7 @@ onMounted(() => {
 <style lang="less" scoped>
 main{
     .bbranco; margin-left: 40px;
-    min-height: 6000px; padding: 10px 0;
+    padding: 10px 0;
     @media (min-width: 992px) {
         margin-left: 180px; .p20;
     }

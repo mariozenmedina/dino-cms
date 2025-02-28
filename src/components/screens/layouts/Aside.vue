@@ -17,6 +17,7 @@
                         <li><a href="">Add to Collections</a></li>
                     </ul>
                 </li>
+                <li><a href="#"><i class="bi bi-people"></i> <span>Users</span></a></li>
                 <li><a href="#"><i class="bi bi-gear"></i> <span>Configs</span></a></li>
             </ul>
         </nav>

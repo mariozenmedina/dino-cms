@@ -9,6 +9,7 @@ import { createWebHistory, createRouter, type RouteRecordRaw } from 'vue-router'
 import App from '@/App.vue';
 import Construction from '@/components/screens/Construction.vue';
 import Collections from '@/components/screens/Collections.vue';
+import ListAll from '@/components/screens/ListAll.vue';
 
 const routes = [
     {
@@ -20,6 +21,11 @@ const routes = [
         path: '/collections',
         name: "collections",
         component: Collections
+    },
+    {
+        path: '/list-all',
+        name: "all",
+        component: ListAll
     },
     {
         path: "/:pathMatch(.*)*",

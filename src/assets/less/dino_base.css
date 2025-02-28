@@ -375,3 +375,8 @@ ol {
   background-color: #42a084;
   color: #F4F1F0;
 }
+.b-left {
+  border-left: solid #E66D44 5px;
+  padding-left: 15px;
+  margin-bottom: 1em;
+}
