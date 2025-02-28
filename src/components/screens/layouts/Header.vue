@@ -3,11 +3,11 @@
         <div class="container-fluid">
             <div class="d-flex align-items-center gap-3 justify-content-between">
                 <div class="d-flex align-items-center gap-3">
-                    <img width="60" src="@/assets/img/logo.png">
+                    <img width="40" src="@/assets/img/logo.png">
                     <h1>REX PANEL</h1>
                 </div>
                 <div class="d-flex align-items-center gap-2">
-                    <span>Mário</span>
+                    <span>Mário,</span>
                     <a class="btn btn-sm btn-leaf">Logout</a>
                 </div>
             </div>
@@ -16,19 +16,20 @@
 </template>
 
 <style lang="less">
-body{ padding-top: 58px; }
+body{ padding-top: 48px; }
 header{
-    .bdino; position: fixed; top: 0; left: 0; z-index: 100;
-    padding: 10px 0; width: 100%;
+    .bjungle; position: fixed; top: 0; left: 0; z-index: 1000;
+    padding: 5px 0; width: 100%;
     .d-flex{
         height: 38px;
         h1{
-            .cbranco;
+            .cbone;
             font-size: 18px;
             font-weight: 700;
             margin: 0;
             padding: 0;
         }
+        span{ .cbone; }
     }
 }
 </style>

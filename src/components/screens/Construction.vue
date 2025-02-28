@@ -25,15 +25,13 @@ import Field from '@/components/dino/Field.vue';
 import DinoHeader from '@/components/screens/layouts/Header.vue';
 import DinoAside from '@/components/screens/layouts/Aside.vue';
 
-import { ref, onMounted } from 'Vue';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { ref, onMounted } from 'vue';
 
 const fields = ref([
     {
         component: "FieldInput",
         attributes: {
-            type: "text",
+            type: "textarea",
             name: "nome",
             placeholder: "insira seu nome",
             required: "true",
@@ -42,7 +40,7 @@ const fields = ref([
             maxlength: 60,
             size: null,
             readonly: null,
-            rows: 10,
+            rows: 5,
         },
         configs: {
             label: "Text",
@@ -192,7 +190,10 @@ onMounted(() => {
 
 <style lang="less" scoped>
 main{
-    .bbranco; margin-left: 200px;
-    min-height: 6000px; padding: 20px;
+    .bbranco; margin-left: 40px;
+    min-height: 6000px; padding: 10px 0;
+    @media (min-width: 992px) {
+        margin-left: 180px; .p20;
+    }
 }
 </style>

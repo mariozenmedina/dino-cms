@@ -12,8 +12,6 @@
 import DinoHeader from '@/components/screens/layouts/Header.vue';
 import DinoAside from '@/components/screens/layouts/Aside.vue';
 import { RouterLink } from 'vue-router';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 </script>
 
 <style lang="less" scoped>
