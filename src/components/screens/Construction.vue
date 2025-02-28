@@ -27,6 +27,8 @@ import DinoAside from '@/components/screens/layouts/Aside.vue';
 
 import { ref, onMounted } from 'vue';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const fields = ref([
     {
         component: "FieldInput",
@@ -50,6 +52,29 @@ const fields = ref([
             datalist: ['Chocolate', 'Coconut', 'Mint', 'Strawberry', 'Vanilla'],
         },
         id: "id_unico_texto"
+    },
+    {
+        component: "FieldInput",
+        attributes: {
+            type: "text",
+            name: "nome",
+            placeholder: "insira seu nome",
+            required: "true",
+            pattern: "",
+            minlength: 0,
+            maxlength: 60,
+            size: null,
+            readonly: null,
+            rows: 5,
+        },
+        configs: {
+            label: "Text",
+            prefix: "Prefix",
+            suffix: "Suffix",
+            validation: "^[\\p{Letter}\\p{Mark}]+(?:\\s[\\p{Letter}\\p{Mark}]+)*$",
+            datalist: ['Chocolate', 'Coconut', 'Mint', 'Strawberry', 'Vanilla'],
+        },
+        id: "id_unico_texto2"
     },
     {
         component: "FieldSelect",

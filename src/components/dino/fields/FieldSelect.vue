@@ -11,7 +11,7 @@
                 ]"
                 v-model="inputValue"
                 v-bind="attributes">
-                <optgroup v-if="configs.optgroups" v-for="optg in configs.optgroups" :key="optg.label" :label="optg.label">
+                <optgroup v-if="configs?.optgroups" v-for="optg in configs.optgroups" :key="optg.label" :label="optg.label">
                     <option v-for="pair in optg?.options" :key="pair.value" :value="pair.value">{{ pair.label }}</option>
                 </optgroup>
                 <option v-else v-for="pair in configs?.options" :key="pair.value" :value="pair.value">{{ pair.label }}</option>
